@@ -1,0 +1,9 @@
+---
+- name: Transfer WAR file from master node to worker node
+  hosts: demo
+  become: yes
+  tasks:
+    - name: Copy WAR file from master node to worker node
+      copy:
+        src: /home/ansible/testfresher.war
+        dest: /root/apache-tomcat-9.0.89/webapps/testfresher.war
